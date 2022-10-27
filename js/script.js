@@ -28,8 +28,9 @@ const { createApp } = Vue
       
         createApp({
           data() {
+            let activeIndex;
             return {
-                activeIndex: 1,
+               activeIndex: 0,
               message: 'Hello Vue!',
               games: [
                 {
@@ -57,10 +58,16 @@ const { createApp } = Vue
             }
         },
         methods: {
+                prevMovie() {
+                     this.activeIndex += 1;
+                    if(this.activeIndex > this.games.length-1){
+                        this.activeIndex = 0;
+                    }
+                },
                 nextMovie() {
-                    activeIndex++;
-                    if(activeIndex > games.length){
-                        activeIndex = 0;
+                    this.activeIndex--;
+                    if(this.activeIndex < 0) {
+                        this.activeIndex = this.games.length-1;
                     }
                 }
         }
