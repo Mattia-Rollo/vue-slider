@@ -72,14 +72,14 @@ const { createApp } = Vue
                     }
                 },
                 autoScroll() {
-                    this.autoscroll = setInterval(()=>{this.nextMovie();},2000);
+                    this.autoscroll = setInterval(this.nextMovie,2000);
                 },
                 stopAutoScroll() {
                     clearInterval(this.autoscroll);
                     this.autoscroll = null;
                 },
                 startAutoScroll() {
-                    this.autoscroll =  setInterval(()=>{this.nextMovie();},2000);
+                    this.autoscroll =  setInterval(this.nextMovie,2000);
                 }
         },
         mounted() {
