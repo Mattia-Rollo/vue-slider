@@ -22,7 +22,7 @@ const slides = [
     }
 ];
 
-console.log(slides);
+// console.log(slides);
 
 const { createApp } = Vue
       
@@ -55,5 +55,14 @@ const { createApp } = Vue
                     }
                 ]
             }
-          }
-        }).mount('#app')
+        },
+        methods: {
+                nextMovie() {
+                    activeIndex++;
+                    if(activeIndex > games.length){
+                        activeIndex = 0;
+                    }
+                }
+        }
+
+    }).mount('#app')
