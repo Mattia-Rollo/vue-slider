@@ -29,7 +29,7 @@ const { createApp } = Vue
         createApp({
           data() {
             return {
-                activeIndex: 0,
+                activeIndex: 1,
               message: 'Hello Vue!',
               games: [
                 {
