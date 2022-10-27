@@ -69,7 +69,14 @@ const { createApp } = Vue
                     if(this.activeIndex < 0) {
                         this.activeIndex = this.games.length-1;
                     }
+                },
+                autoScroll() {
+                    this.nextMovie();
                 }
-        }
+        },
+        // mounted: {
+        //     autoScroll();
+        // }
+
 
     }).mount('#app')
