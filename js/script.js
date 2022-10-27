@@ -31,6 +31,7 @@ const { createApp } = Vue
             let activeIndex;
             return {
                activeIndex: 0,
+               autoscroll: null,
               message: 'Hello Vue!',
               games: [
                 {
@@ -69,14 +70,22 @@ const { createApp } = Vue
                     if(this.activeIndex < 0) {
                         this.activeIndex = this.games.length-1;
                     }
+                },
+                autoScroll() {
+                    this.autoscroll = setInterval(()=>{this.nextMovie();},2000);
+                },
+                stopAutoScroll() {
+                    clearInterval(this.autoscroll);
+                    this.autoscroll = null;
+                },
+                startAutoScroll() {
+                    this.autoscroll =  setInterval(()=>{this.nextMovie();},2000);
                 }
-                // autoScroll() {
-                //     this.nextMovie();
-                // }
+        },
+        mounted() {
+            this.autoScroll()
+            
         }
-        // mounted() {
-        //     setInterval(autoScroll(),3000);
-        // }
 
 
     }).mount('#app')
