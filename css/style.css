@@ -45,7 +45,7 @@
 }
 
 .thumb img {
-    width: 35vh;
+    width: 200px;
     height: 100%;
     object-fit: cover;
 }
