@@ -83,8 +83,7 @@ const { createApp } = Vue
                 }
         },
         mounted() {
-            this.autoScroll()
-            
+            this.autoScroll();
         }
 
 
